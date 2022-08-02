@@ -2,12 +2,12 @@
 
 /* CSS RESET */
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
 * {
     margin: 0;
+
+    &::before, *::after {
+        box-sizing: border-box;
+    }
 }
 
 html, body {
@@ -53,13 +53,12 @@ a{
     justify-content: space-between;
     padding: 10px 5%;
     background-color: lightgray;
-}
 
-.navbar .home-icon{
-    font-size: 36px;
-    font-weight: 600;
+    .home-icon{
+        font-size: 36px;
+        font-weight: 600;
+    }
 }
-
 .navbar .menu-wrapped{
     display: flex;
 }
