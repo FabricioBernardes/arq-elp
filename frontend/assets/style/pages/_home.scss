@@ -1,0 +1,36 @@
+.container{
+    padding: 5%;
+
+    .title-wrapped{
+        text-align: center;
+    
+        h1{
+            font-size: 24px;
+        }
+        
+        p{
+            font-size: 18px;
+        }
+    }
+}
+
+.table-contacts{
+    height: 60vh;
+    padding: 10px;
+    border: 1px solid black;
+    margin-top: 50px;
+
+    table{
+        width: 100%;
+    }
+    
+    tr{
+        background-color: #ececec;
+    }
+    
+    td{
+        background-color: #ececec;
+        padding-left: 5px;
+    }
+}
+

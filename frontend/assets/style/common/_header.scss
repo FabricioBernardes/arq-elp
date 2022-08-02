@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5%;
+    background-color: lightgray;
+
+    .home-icon{
+        font-size: 36px;
+        font-weight: 600;
+    }
+
+    .menu-wrapped{
+        display: flex;
+    }
+
+    .navbar-list{
+        display: flex;
+        align-items: center;
+
+        .nav-item{
+            margin-left: 20px;
+        }
+        
+    }
+}

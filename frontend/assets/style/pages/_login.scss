@@ -1,0 +1,25 @@
+.login-section .login-container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 30px auto 0;
+    text-align: center;
+
+    .form-wrapped{
+        width: 45%;
+    }
+    
+    form{
+        margin-top: 20px;
+    }
+    
+    .form-wrapped input{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .form-wrapped button{
+        width: 100%;
+        margin-top: 20px;
+    }
+}
