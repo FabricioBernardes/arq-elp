@@ -1,23 +1,27 @@
 <nav class="navbar">
-  <a class="home-icon" href="/">Agenda</a>
+  <div class="container-fluid">
+    <a class="geral-logo" href="/">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path style="fill:#fdffff;fill-opacity:1;stroke:#000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m24.279 43.095 62.573-.242-.032 60.863c-.081 3.564-2.18 5.69-5.082 6.512H29.555c-2.638-.28-5.026-3.355-4.995-5.295z" transform="matrix(1.0443 .2559 -.28408 .94075 5.58 -25.799)"/><path style="fill:#61c3b8;fill-opacity:1;stroke:#000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m93.269 55.398 3.387-3.934c1.014-.891 2.58-.841 3.692-.303l3.187 2.63c.905.985.853 2.723.24 3.73l-3.432 4.088-7.074-6.211" transform="matrix(1.0443 .2559 -.28408 .94075 5.58 -25.799)"/><path style="fill:#fd9467;fill-opacity:1;stroke:#000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m70.463 82.686 22.806-27.288 7.074 6.21-22.688 26.69" transform="matrix(1.0443 .2559 -.28408 .94075 5.58 -25.799)"/><path style="fill:#61c3b8;fill-opacity:1;stroke:#000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m24.083 27.288 63.878.033c.974.305 1.72 1.25 2.05 2.037l-.113 9.906c.009 2.378-.467 3.37-3.046 3.589l-63.735.165c-.817-.475-1.537-1.191-1.974-2.495l.126-11.122c.217-1.316 1.264-2.079 2.814-2.113z" transform="matrix(1.0443 .2559 -.28408 .94075 5.58 -25.799)"/><path style="fill:none;fill-opacity:1;stroke:#fd9467;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M35.052 55.487h40.92" transform="matrix(1.0443 .2559 -.28408 .94075 5.58 -25.799)"/><path style="fill:none;stroke:#61c3b8;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M34.8 67.98h38.289M34.9 80.575l28.832.05M35.052 93.22h25.544" transform="matrix(1.0443 .2559 -.28408 .94075 5.58 -25.799)"/><path style="fill:#fd9467;fill-opacity:1;stroke:#000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M77.45 19.25c1.425.074 2.33.966 2.772 1.655.691 1.08.397 2.546.375 6.357-.029 3.931-.012 5.298-.581 6.284-.44.763-1.218 1.542-2.729 1.567-1.371.022-2.238-.962-2.65-1.809-.507-1.039-.384-2.233-.335-5.541.063-3.685-.154-5.5.35-6.741.4-.987 1.308-1.755 2.798-1.771zM35.189 19.332c1.426.073 2.33.965 2.772 1.654.691 1.08.397 2.546.375 6.358-.029 3.93-.012 5.298-.581 6.284-.44.763-1.218 1.54-2.729 1.566-1.37.023-2.238-.962-2.65-1.808-.507-1.04-.384-2.234-.335-5.542.064-3.685-.153-5.5.35-6.74.4-.988 1.308-1.756 2.798-1.772z" transform="matrix(1.0443 .2559 -.28408 .94075 5.58 -25.799)"/><path style="fill:none;stroke:#000;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m70.738 82.145-1.908 7.171c-.88 3.445-.558 3.574 2.143 2.248l6.682-3.267c.43-.246-5.342-5.47-6.573-6.142" transform="matrix(1.0443 .2559 -.28408 .94075 5.58 -25.799)"/></svg>
+    </a>
 
-  <div class="menu-wrapped">
-    <ul class="navbar-list">
+    <div class="menu-wrapped">
+      <ul class="navbar-list">
 
-      <li class="nav-item">
-        <a class="nav-link" href="/contato/index">Cadastrar contato</a>
-      </li>
-
-      <% if(user) { %>
         <li class="nav-item">
-          <a class="nav-link" href="/login/logout">Sair</a>
+          <a class="nav-link" href="/contato/index">Cadastrar contato</a>
         </li>
-      <% } else { %>
-        <li class="nav-item">
-          <a class="nav-link" href="/login/index">Entrar</a>
-        </li>
-      <% } %>
 
-    </ul>
+        <% if(user) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/login/logout">Sair</a>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/login/index">Entrar</a>
+          </li>
+        <% } %>
+
+      </ul>
+    </div>
   </div>
 </nav>

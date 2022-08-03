@@ -1,13 +1,15 @@
 <%- include('includes/head') %>
 <%- include('includes/nav') %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
+<main>
+  <div class="register-page container-fluid">
 
-    <div class="col-lg-8 my-3">
-      <h1 class="text-center">Contato</h1>
-      <p class="text-center lead">Crie ou edite seu contato abaixo.</p>
+    <div class="title-wrapper">
+      <h1 class="page-title">Contato</h1>
+      <p class="page-subtitle">Crie ou edite seu contato abaixo.</p>
+    </div>
+
+    <div class="form-wrapper">
 
       <%- include('includes/messages') %>
 
@@ -16,6 +18,7 @@
       <% } else { %>
       <form action="/contato/register" method="POST">
       <% } %>
+
         <input type="hidden" name="_csrf" value=<%= csrfToken %>>
         <div class="form-group">
           <label>Nome</label>
@@ -33,14 +36,15 @@
           <label>Telefone</label>
           <input value="<%= contato.telefone %>" type="tel" class="form-control" name="telefone">
         </div>
-        <button type="submit" class="btn btn-primary">Salvar</button>
+        <div class="btn-wrapper">
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+
       </form>
 
-
     </div>
-    
-    <div class="col-lg-2"></div>
+
   </div>
-</div>
+</main>
 
 <%- include('includes/footer') %>

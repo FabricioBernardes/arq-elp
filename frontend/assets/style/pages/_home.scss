@@ -1,5 +1,5 @@
-.container{
-    padding: 5%;
+.container-fluid{
+    padding-bottom: 50px;
 
     .title-wrapped{
         text-align: center;
@@ -15,7 +15,7 @@
 }
 
 .table-contacts{
-    height: 60vh;
+    min-height: 60vh;
     padding: 10px;
     border: 1px solid black;
     margin-top: 50px;

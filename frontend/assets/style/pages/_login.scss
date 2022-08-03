@@ -23,3 +23,11 @@
         margin-top: 20px;
     }
 }
+
+.logged-infos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
