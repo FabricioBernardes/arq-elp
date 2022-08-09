@@ -1,0 +1,50 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<main>
+  <div class="register-page container-fluid">
+
+    <div class="title-wrapper">
+      <h1 class="page-title">Sítios Arqueologicos</h1>
+      <p class="page-subtitle">Crie ou edite cadastros de sitios arqueologicos.</p>
+    </div>
+
+    <div class="form-wrapper">
+
+      <%- include('includes/messages') %>
+
+      <% if(site._id) { %>
+      <form action="/site/edit/<%= site._id %>" method="POST">
+      <% } else { %>
+      <form action="/site/register" method="POST">
+      <% } %>
+
+        <input type="hidden" name="_csrf" value=<%= csrfToken %>>
+        <div class="form-group">
+          <label>Nome do sítio</label>
+          <input value="<%= site.nome %>" type="text" class="form-control" name="nome">
+        </div>
+        <div class="form-group">
+          <label>Cidade</label>
+          <input value="<%= site.cidade %>" type="text" class="form-control" name="cidade">
+        </div>
+        <div class="form-group">
+          <label>Latitude</label>
+          <input value="<%= site.lat %>" type="number" class="form-control" name="lat">
+        </div>
+        <div class="form-group">
+          <label>Longitude</label>
+          <input value="<%= site.long %>" type="number" class="form-control" name="long">
+        </div>
+        <div class="btn-wrapper">
+          <button type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+</main>
+
+<%- include('includes/footer') %>

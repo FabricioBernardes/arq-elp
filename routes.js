@@ -3,7 +3,7 @@ const route = express.Router();
 
 const homeController = require('./src/controllers/homeController');
 const loginController = require('./src/controllers/loginController');
-const contatoController = require('./src/controllers/contatoController');
+const siteController = require('./src/controllers/siteController');
 
 const { loginRequired } = require('./src/middlewares/middleware');
 
@@ -16,11 +16,11 @@ route.post('/login/register', loginController.register);
 route.post('/login/login', loginController.login);
 route.get('/login/logout', loginController.logout);
 
-// Rotas de contato
-route.get('/contato/index', loginRequired, contatoController.index);
-route.post('/contato/register', loginRequired, contatoController.register);
-route.get('/contato/index/:id', loginRequired, contatoController.editIndex);
-route.post('/contato/edit/:id', loginRequired, contatoController.edit);
-route.get('/contato/delete/:id', loginRequired, contatoController.delete);
+// Rotas de site
+route.get('/site/index', loginRequired, siteController.index);
+route.post('/site/register', loginRequired, siteController.register);
+route.get('/site/index/:id', loginRequired, siteController.editIndex);
+route.post('/site/edit/:id', loginRequired, siteController.edit);
+route.get('/site/delete/:id', loginRequired, siteController.delete);
 
 module.exports = route;

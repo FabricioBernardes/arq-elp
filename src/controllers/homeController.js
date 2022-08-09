@@ -1,7 +1,7 @@
-const Contato = require('../models/ContatoModel');
+const Site = require('../models/SiteModel');
 
 exports.index = async(req, res) => {
-  const contatos = await Contato.buscaContatos();
-  res.render('index', { contatos });
+  const sites = await Site.buscaSites();
+  res.render('index', { sites });
 };
 
