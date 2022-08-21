@@ -2,6 +2,7 @@ const express = require('express');
 const route = express.Router();
 
 const homeController = require('./src/controllers/homeController');
+const webmapController = require('./src/controllers/webmapController');
 const loginController = require('./src/controllers/loginController');
 const siteController = require('./src/controllers/siteController');
 
@@ -9,6 +10,9 @@ const { loginRequired } = require('./src/middlewares/middleware');
 
 // Rotas da home
 route.get('/', homeController.index);
+
+// Rota webmap
+route.get('/webmap', webmapController.index);
 
 // Rotas de login
 route.get('/login/index', loginController.index);
