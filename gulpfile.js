@@ -35,7 +35,7 @@ gulp.task("compilaJs", compilaJs)
 
 function watch(){
     gulp.watch("./frontend/assets/style/*/**.scss", compilaSass)
-    gulp.watch("./frontend/assets/js/*/**.js", compilaJs)
+    gulp.watch("./frontend/assets/js/*.js", compilaJs)
 }
 
 gulp.task("watch", watch);

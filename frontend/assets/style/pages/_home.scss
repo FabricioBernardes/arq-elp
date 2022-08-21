@@ -1,3 +1,5 @@
+@import "../components/main_map";
+
 .container-fluid{
     padding-bottom: 50px;
 
@@ -14,23 +16,23 @@
     }
 }
 
-.table-contacts{
-    min-height: 60vh;
-    padding: 10px;
-    border: 1px solid black;
-    margin-top: 50px;
+// .table-contacts{
+//     min-height: 60vh;
+//     padding: 10px;
+//     border: 1px solid black;
+//     margin-top: 50px;
 
-    table{
-        width: 100%;
-    }
+//     table{
+//         width: 100%;
+//     }
     
-    tr{
-        background-color: #ececec;
-    }
+//     tr{
+//         background-color: #ececec;
+//     }
     
-    td{
-        background-color: #ececec;
-        padding-left: 5px;
-    }
-}
+//     td{
+//         background-color: #ececec;
+//         padding-left: 5px;
+//     }
+// }
 
