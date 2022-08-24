@@ -3,6 +3,7 @@ const route = express.Router();
 
 const homeController = require('./src/controllers/homeController');
 const webmapController = require('./src/controllers/webmapController');
+const siteFormController = require('./src/controllers/siteFormController');
 const loginController = require('./src/controllers/loginController');
 const siteController = require('./src/controllers/siteController');
 
@@ -13,6 +14,10 @@ route.get('/', homeController.index);
 
 // Rota webmap
 route.get('/webmap', webmapController.index);
+
+// Rota ficha de sitio arqueologico
+
+route.get('/site-form/:siteId?', siteFormController.index);
 
 // Rotas de login
 route.get('/login/index', loginController.index);
