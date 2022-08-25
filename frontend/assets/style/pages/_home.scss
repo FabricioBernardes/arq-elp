@@ -5,10 +5,12 @@
 
     .row{
         text-align: center;
-        height: 75vh;
+        min-height: 75vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        max-width: 800px;
+        margin: 0 auto;
 
         h1{
             font-size: 2rem;
@@ -41,25 +43,29 @@
             font-size: 18px;
         }
     }
+
+    .site-title{
+        margin-bottom: 50px;
+    }
+
+    .data-infos{
+        margin: 0 0 20px;
+
+        span{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: flex-end;
+            
+            h3, p{
+                margin: 0;
+            }
+        }
+    }
+
+    .site-description{
+        text-align: justify;
+    }
 }
-
-// .table-contacts{
-//     min-height: 60vh;
-//     padding: 10px;
-//     border: 1px solid black;
-//     margin-top: 50px;
-
-//     table{
-//         width: 100%;
-//     }
-    
-//     tr{
-//         background-color: #ececec;
-//     }
-    
-//     td{
-//         background-color: #ececec;
-//         padding-left: 5px;
-//     }
-// }
 
