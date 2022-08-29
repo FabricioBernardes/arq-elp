@@ -3,21 +3,15 @@ const route = express.Router();
 
 const homeController = require('./src/controllers/homeController');
 const webmapController = require('./src/controllers/webmapController');
-const siteFormController = require('./src/controllers/siteFormController');
+const siteMainInfosController = require('./src/controllers/siteMainInfosController');
 const loginController = require('./src/controllers/loginController');
-const siteController = require('./src/controllers/siteController');
+const siteRegisterController = require('./src/controllers/siteRegisterController');
+const sitesListSearchController = require('./src/controllers/sitesListSearchController');
 
 const { loginRequired } = require('./src/middlewares/middleware');
 
 // Rotas da home
 route.get('/', homeController.index);
-
-// Rota webmap
-route.get('/webmap', webmapController.index);
-
-// Rota ficha de sitio arqueologico
-
-route.get('/site-form/:siteId?', siteFormController.index);
 
 // Rotas de login
 route.get('/login/index', loginController.index);
@@ -25,11 +19,22 @@ route.post('/login/register', loginController.register);
 route.post('/login/login', loginController.login);
 route.get('/login/logout', loginController.logout);
 
-// Rotas de site
-route.get('/site/index', loginRequired, siteController.index);
-route.post('/site/register', loginRequired, siteController.register);
-route.get('/site/index/:id', loginRequired, siteController.editIndex);
-route.post('/site/edit/:id', loginRequired, siteController.edit);
-route.get('/site/delete/:id', loginRequired, siteController.delete);
+// Rotas de criação/edição de sitios arqueologicos
+route.get('/site-register/index', loginRequired, siteRegisterController.index);
+route.post('/site-register/register', loginRequired, siteRegisterController.register);
+route.get('/site-register/index/:id', loginRequired, siteRegisterController.editIndex);
+route.post('/site-register/edit/:id', loginRequired, siteRegisterController.edit);
+route.get('/site-register/delete/:id', loginRequired, siteRegisterController.delete);
+
+// Rota webmap
+route.get('/webmap', webmapController.index);
+
+// Rota listagem de sitios
+route.get('/sites-list', sitesListSearchController.index);
+
+// Rota ficha de sitio arqueologico
+route.get('/site-main/:siteId?', siteMainInfosController.index);
+
+
 
 module.exports = route;

@@ -5,15 +5,26 @@
   <div class="container-fluid">
     <div class="logged-infos">
       <div class="col-lg-2"></div>
-  
+
       <div class="col-lg-8 my-3">
         <h1 class="text-center">Olá <%= user.email %></h1>
-        <p class="text-center lead">Você precisa sair para criar outra conta.</p>
-  
+
         <%- include('includes/messages'); %>
+
+        <ul>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/login/logout">Sair</a>
+          </li>
   
+          <li class="nav-item">
+            <a class="nav-link" href="/site-register/index">Cadastrar sítio</a>
+          </li>
+
+        </ul>
+
       </div>
-  
+
       <div class="col-lg-2"></div>
     </div>
   </div>

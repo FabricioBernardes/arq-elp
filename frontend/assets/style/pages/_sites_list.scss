@@ -1,0 +1,15 @@
+.sites-list-page{
+    padding: 50px;
+    min-height: 80vh;
+
+    .sites-list-wrapped{
+
+        .list-item{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+    }
+}

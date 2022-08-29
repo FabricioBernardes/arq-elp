@@ -356,11 +356,11 @@ window.page_template = {
 
         for (var i = 0; i < locations.length; i++) {
             const popupContent = `
-                                    <h3>${locations[i].site}</h3>
-                                    <p><strong>Municipio:</strong> ${locations[i].municipio}  <strong>Localidade:</strong> ${locations[i].localidade}</>
-                                    <p><strong>Tipo de sitio:</strong> ${locations[i].tipo}</p>
-                                    <a href="/site-form/${locations[i].siteID}">Ficha do sítio</a>
-                                `
+                <h3>${locations[i].site}</h3>
+                <p><strong>Municipio:</strong> ${locations[i].municipio}  <strong>Localidade:</strong> ${locations[i].localidade}</>
+                <p><strong>Tipo de sitio:</strong> ${locations[i].tipo}</p>
+                <a href="/site-main/${locations[i].siteID}">Ficha do sítio</a>
+            `
 
             L.marker([locations[i].lat, locations[i].long]).addTo(map)
             .bindPopup(popupContent)
@@ -443,7 +443,7 @@ window.page_template = {
         if(pathName == "/webmap"){
             _this.setMainMap();
         }
-        if(pathName.includes("/site-form")){
+        if(pathName.includes("/site-main")){
             _this.setSiteFormdata();
         }
         _this.setLoginpage();

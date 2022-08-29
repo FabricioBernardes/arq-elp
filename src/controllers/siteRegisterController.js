@@ -1,7 +1,7 @@
 const Site = require('../models/SiteModel');
 
 exports.index = (req, res) => {
-  res.render('site', {
+  res.render('site-register', {
     site: {}
   });
 };
@@ -18,7 +18,7 @@ exports.register = async(req, res) => {
     }
 
     req.flash('success', 'Site registrado com sucesso.');
-    req.session.save(() => res.redirect(`/site/index/${site.site._id}`));
+    req.session.save(() => res.redirect(`/site-register/index/${site.site._id}`));
     return;
   } catch(e) {
     console.log(e);
@@ -32,7 +32,7 @@ exports.editIndex = async function(req, res) {
   const site = await Site.buscaPorId(req.params.id);
   if(!site) return res.render('404');
 
-  res.render('site', { site });
+  res.render('site-register', { site });
 };
 
 exports.edit = async function(req, res) {
@@ -48,7 +48,7 @@ exports.edit = async function(req, res) {
     }
 
     req.flash('success', 'Site editado com sucesso.');
-    req.session.save(() => res.redirect(`/site/index/${site.site._id}`));
+    req.session.save(() => res.redirect(`/site-register/index/${site.site._id}`));
     return;
   } catch(e) {
     console.log(e);

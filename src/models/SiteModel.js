@@ -3,9 +3,12 @@ const validator = require('validator');
 
 const SiteSchema = new mongoose.Schema({
   nome: { type: String, required: true },
-  cidade: { type: String, required: false, default: '' },
-  lat: { type: Number, required: false, default: '' },
-  long: { type: Number, required: false, default: '' },
+  tipo: { type: String, required: false, default: '' },
+  lat: { type: String, required: false, default: '' },
+  long: { type: String, required: false, default: '' },
+  municipio: { type: String, required: false, default: '' },
+  localidade: { type: String, required: false, default: '' },
+  descricao: { type: String, required: false, default: '' },
   criadoEm: { type: Date, default: Date.now },
 });
 
@@ -28,7 +31,7 @@ Site.prototype.valida = function() {
 
   // Validação
   // O e-mail precisa ser válido
-  if(!this.body.cidade) this.errors.push('E-mail inválido');
+  if(!this.body.municipio) this.errors.push('E-mail inválido');
   if(!this.body.nome) this.errors.push('Nome é um campo obrigatório.');
 };
 
@@ -41,9 +44,12 @@ Site.prototype.cleanUp = function() {
 
   this.body = {
     nome: this.body.nome,
-    cidade: this.body.cidade,
+    tipo: this.body.tipo,
     lat: this.body.lat,
     long: this.body.long,
+    municipio: this.body.municipio,
+    localidade: this.body.localidade,
+    descricao: this.body.descricao,
   };
 };
 
@@ -70,7 +76,7 @@ Site.buscaSites = async function() {
 Site.delete = async function(id) {
   if(typeof id !== 'string') return;
   const Site = await SiteModel.findOneAndDelete({_id: id});
-  return site;
+  return Site;
 };
 
 

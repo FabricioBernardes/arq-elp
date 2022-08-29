@@ -1,0 +1,38 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>
+
+<main>
+    <div class="sites-list-page container-fluid">
+
+        <div class="sites-list-wrapped">
+
+            <%- include('includes/messages') %>
+
+            <% if(sites.length > 0) { %>
+
+
+                <% sites.forEach(site => { %>
+                    <div class="list-item">
+                        <div>
+                            <h3><%= site.nome %></h3>
+                            <h3><%= site.municipio %></h3>
+                        </div>
+                        <div>
+                            <a href="/site-register/index/<%= site._id %>">Editar</a>
+                            <a class="text-danger" href="/site-register/delete/<%= site._id %>">Excluir</a>
+                        </div>
+                    </div>
+                <% }); %>
+
+
+            <% } else { %>
+                <p class="text-center lead">Não há sitios cadastrados.</p>
+            <% } %>
+
+        </div>
+
+        </div>
+    </div>
+</main>
+
+<%- include('includes/footer') %>
