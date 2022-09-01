@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const showdown = require('showdown')
 
 const SiteSchema = new mongoose.Schema({
   nome: { type: String, required: true },
@@ -9,12 +10,18 @@ const SiteSchema = new mongoose.Schema({
   municipio: { type: String, required: false, default: '' },
   localidade: { type: String, required: false, default: '' },
   descricao: { type: String, required: false, default: '' },
+  descricao_html: { type: String, required: false, default: '' },
   criadoEm: { type: Date, default: Date.now },
 });
 
 const SiteModel = mongoose.model('Site', SiteSchema);
 
 function Site(body) {
+  const converter = new showdown.Converter()
+  const descHtml = converter.makeHtml(body.descricao)
+
+  body = { ...body, descricao_html: descHtml }
+
   this.body = body;
   this.errors = [];
   this.site = null;
@@ -50,6 +57,7 @@ Site.prototype.cleanUp = function() {
     municipio: this.body.municipio,
     localidade: this.body.localidade,
     descricao: this.body.descricao,
+    descricao_html: this.body.descricao_html,
   };
 };
 
