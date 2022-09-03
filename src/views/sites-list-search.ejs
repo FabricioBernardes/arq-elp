@@ -14,13 +14,22 @@
                 <% sites.forEach(site => { %>
                     <div class="list-item">
                         <div>
-                            <h3><%= site.nome %></h3>
-                            <h3><%= site.municipio %></h3>
+                            <a href="/site-main/<%= site._id %>"><%= site.nome %></a>
                         </div>
-                        <div>
-                            <a href="/site-register/index/<%= site._id %>">Editar</a>
-                            <a class="text-danger" href="/site-register/delete/<%= site._id %>">Excluir</a>
-                        </div>
+
+                        <% if(user) { %>
+
+                            <div>
+                                <a href="/site-register/index/<%= site._id %>">Editar</a>
+                                <a class="text-danger" href="/site-register/delete/<%= site._id %>">Excluir</a>
+                            </div>
+
+                        <% } else { %>
+
+                            <div>Necessário login.</div>
+                        
+                        <% } %>
+
                     </div>
                 <% }); %>
 
