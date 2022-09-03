@@ -4,8 +4,9 @@ import validator from 'validator';
 
 window.page_template = {
     setMainMap: function(){
+        
 
-        var map = L.map('map').setView([-31.9461882, -52.321904,9.75], 10);
+        var map = L.map('map').setView([-31.946931, -52.099278], 10);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
